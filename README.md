@@ -1,11 +1,11 @@
 afternoon-cape
 ==============
 
-Power Monitoring (PM aka "Afternoon") cape for the BeagleBone Black
+Power Monitor (PM aka "Afternoon") cape for the BeagleBone Black
 
 This repository contains:
-- Altium libraries, schematic, board files
-- Gerber/Drill files for PCB (OSH Park shared project)
+- Altium library, schematic, and board files
+- PCB gerbers and drill files
 - Bill of materials
 - Linux device driver for CD74HC4067, INA226, TMP441
 - GUI source
@@ -13,4 +13,3 @@ This repository contains:
 
 Usage:
 - loadmod afternoon-cape.ko EVM=am437xGP.txt
-
