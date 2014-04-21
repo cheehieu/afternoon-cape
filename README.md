@@ -17,19 +17,20 @@ Usage:
 
 Revision History:
 - Alpha releases A1 (TI mux), A2 (ADI mux), A3 (all INAs)
+
 - A1: 
--- MUX_SEL0 (P8, pin 12)
--- MUX_SEL1 (P9, pin 23)
--- MUX_SEL2 (P9, pin 27)
--- MUX_SEL3 (P9, pin 12)
--- INA_42 handles channels 0 through 15
--- INA_43 handles channels 16 through 31
+- MUX_SEL0 (P8, pin 12)
+- MUX_SEL1 (P9, pin 23)
+- MUX_SEL2 (P9, pin 27)
+- MUX_SEL3 (P9, pin 12)
+- INA_42 handles channels 0 through 15
+- INA_43 handles channels 16 through 31
 
 
 - A2:
--- MUX_SEL0 (P8, pin 12)
--- MUX_SEL1 (P9, pin 23)
--- MUX_SEL2 (P9, pin 27)
--- MUX_SEL3 (P9, pin 12)
--- INA_42 handles channels 0 through 15
--- INA_43 handles channels 16 through 31
+- MUX_SEL0 (P8, pin 12)
+- MUX_SEL1 (P9, pin 23)
+- MUX_SEL2 (P9, pin 27)
+- MUX_SEL3 (P9, pin 12)
+- INA_42 handles channels 0 through 15
+- INA_43 handles channels 16 through 31
