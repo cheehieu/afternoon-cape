@@ -3,8 +3,8 @@ afternoon-cape
 
 A Power Monitor (PM aka "Afternoon") cape for the BeagleBone Black. The AfternoonCape utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply.
 
-<img src="images/pmcape_assembled.png" width="500">
-<img src="images/pmcape_mounted.png" width="500">
+<img src="images/pmcape_assembled.png">
+<img src="images/pmcape_mounted.png">
 
 This repository contains:
 - Altium library, schematic, and board files
@@ -59,6 +59,7 @@ A3:
 
 
 B1:
+
 <img src="images/pmcape_B1_oshpark_top.png" width="350">
 <img src="images/pmcape_B1_oshpark_bottom.png" width="350">
 
