@@ -1,37 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="afternoon-cape : The power is TOO DAMN HIGH!">
+    <title>afternoon-cape by cheehieu</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>afternoon-cape</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>afternoon-cape</h1>
+        <p>The power is TOO DAMN HIGH!</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/cheehieu/afternoon-cape">View on GitHub</a>
+        <p class="view"><a href="https://github.com/cheehieu/afternoon-cape">View the Project on GitHub <small>cheehieu/afternoon-cape</small></a></p>
 
-          <h1 id="project_title">afternoon-cape</h1>
-          <h2 id="project_tagline">The power is TOO DAMN HIGH!</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/cheehieu/afternoon-cape/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/cheehieu/afternoon-cape/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <ul>
+          <li><a href="https://github.com/cheehieu/afternoon-cape/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/cheehieu/afternoon-cape/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/cheehieu/afternoon-cape">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="afternoon-cape" class="anchor" href="#afternoon-cape" aria-hidden="true"><span class="octicon octicon-link"></span></a>afternoon-cape</h1>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>Power Monitor (PM aka "Afternoon") cape for the BeagleBone Black</p>
+<p>A Power Monitor (PM aka "Afternoon") cape for the BeagleBone Black. The AfternoonCape utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply.</p>
+
+<p><img src="images/pmcape_assembled.png">
+<img src="images/pmcape_mounted.png"></p>
 
 <p>This repository contains:</p>
 
@@ -47,39 +50,68 @@
 
 <ul>
 <li>loadmod afternoon-cape.ko EVM=am437xGP.txt</li>
+<li>Bash shell scripts using sysfs GPIO</li>
+<li>PMDC I2C protocol</li>
 </ul>
 
 <p>Revision History:</p>
 
 <ul>
-<li><p>Alpha releases A1 (TI mux), A2 (ADI mux), A3 (all INAs)</p></li>
-<li><p>A1: </p></li>
+<li>Alpha releases A1 (TI mux), A2 (ADI mux), A3 (discrete channel INAs)</li>
+<li>Beta releases B1 (TI mux)</li>
+</ul>
+
+<p>A1:</p>
+
+<p><img src="images/pmcape_A1_oshpark_top.png" width="350">
+<img src="images/pmcape_A1_oshpark_bottom.png" width="350"></p>
+
+<ul>
 <li>MUX_SEL0 (P8, pin 12) - GPIO1_12 (0x44e10830, 0x30 offset, #44)</li>
 <li>MUX_SEL1 (P9, pin 23) - GPIO1_17 (0x44e10844, 0x44 offset, #49)</li>
 <li>MUX_SEL2 (P9, pin 27) - GPIO3_19 (0x44e109a4, 0x1a4 offset, #115)</li>
 <li>MUX_SEL3 (P9, pin 12) - GPIO1_28 (0x44e10878, 0x78 offset, #60)</li>
 <li>INA_42 handles channels 0 through 15</li>
-<li><p>INA_43 handles channels 16 through 31</p></li>
-<li><p>A2:</p></li>
+<li>INA_43 handles channels 16 through 31</li>
+<li>Accuracy +/- %</li>
+</ul>
+
+<p>A2:</p>
+
+<p><img src="images/pmcape_A2_oshpark_top.png" width="350">
+<img src="images/pmcape_A2_oshpark_bottom.png" width="350"></p>
+
+<ul>
 <li>MUX_SEL0 (P8, pin 12)</li>
 <li>MUX_SEL1 (P9, pin 23)</li>
 <li>MUX_SEL2 (P9, pin 27)</li>
 <li>MUX_SEL3 (P9, pin 12)</li>
 <li>INA_42 handles channels 0 through 15</li>
 <li>INA_43 handles channels 16 through 31</li>
+<li>Accuracy +/- %</li>
 </ul>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">afternoon-cape maintained by <a href="https://github.com/cheehieu">cheehieu</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<p>A3:</p>
+
+<p><img src="images/pmcape_A3_oshpark_top.png" width="350">
+<img src="images/pmcape_A3_oshpark_bottom.png" width="350"></p>
+
+<ul>
+<li>INA42-INA4F handles channels 0 through 11</li>
+<li>Accuracy +/- %</li>
+</ul>
+
+<p>B1:</p>
+
+<p><img src="images/pmcape_B1_oshpark_top.png" width="350">
+<img src="images/pmcape_B1_oshpark_bottom.png" width="350"></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/cheehieu">cheehieu</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
