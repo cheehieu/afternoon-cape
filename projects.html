@@ -1,0 +1,252 @@
+---
+layout: projects
+title: Nifty Projects.
+---
+
+<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 projects-blurb">
+				<p>This landing page contains a collection of projects I've worked on throughout college and my professional career. Everything is open source and available on GitHub. Find out more information by visiting the individual project pages, which contain more detailed documentation, reports, design files, and software sources. The <em><a href=#featured>Featured</a></em> carousel below highlights my recent projects. To view more, choose from the following categories: </p>
+				<div class="project-categories">
+					<a class="btn btn-default btn-lg" href="#hardware" role="button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Hardware</a>
+					<a class="btn btn-default btn-lg" href="#software" role="button"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Software</a>
+					<a class="btn btn-default btn-lg" href="#misc" role="button"><span class="glyphicon glyphicon-lamp" aria-hidden="true"></span> Misc.</a>
+				</div>	
+				<h1 class="projects"><a name="featured">Featured</a></h1>
+				<div id="myCarousel" class="carousel slide container carousel-projects" data-ride="carousel" data-interval="5000" data-pause="hover">
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
+						<li data-target="#myCarousel" data-slide-to="5"></li>						
+					</ol>
+					<div class="carousel-inner carousel-inner-projects" role="listbox">
+						<div class="item active slide1">
+							<a href="{{ site.url }}/kinect-duplo-sensing"><img src="{{ site.url }}/kinect-duplo-sensing/images/many_duplos_result.png" alt="First slide"></a>
+							<div class="container">
+								<div class="carousel-caption carousel-caption-projects">
+									<h3><a href="{{ site.url }}/kinect-duplo-sensing">kinect-duplo-sensing</a></h3>
+									<p>A ROS package for identifying Duplo blocks with the Microsoft Kinect sensor.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item slide2">
+							<a href="{{ site.url }}/afternoon-cape"><img src="{{ site.url }}/afternoon-cape/images/capes_display.jpg" alt="Second slide"></a>
+							<div class="container">
+								<div class="carousel-caption carousel-caption-projects">
+									<h3><a href="{{ site.url }}/afternoon-cape">afternoon-cape</a></h3>
+									<p>A low-cost power monitoring cape to sample voltage, current, and power consumption of a given supply.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item slide3">
+							<a href="{{ site.url }}/rtdc/"><img src="{{ site.url }}/rtdc/images/rtdc-pcb-assembled.jpg" alt="Third slide"></a>
+							<div class="container">
+								<div class="carousel-caption carousel-caption-projects">
+									<h3><a href="{{ site.url }}/rtdc">rtdc</a></h3>
+									<p>A daughter card for monitoring the temperature of a remote thermal diode.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item slide4">
+							<a href="{{ site.url }}/bubbly-cloud"><img class="img-responsive" src="{{ site.url }}/bubbly-cloud/images/bubbly.jpg" alt="Fourth slide"></a>
+							<div class="container">
+								<div class="carousel-caption carousel-caption-projects">
+									<h3><a href="{{ site.url }}/bubbly-cloud">bubbly-cloud</a></h3>
+									<p>A smart-er bubble making machine.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item slide5">
+							<a href="{{ site.url }}/usc-auv-passive-sonar"><img class="img-responsive" src="{{ site.url }}/usc-auv-kill-switch/images/seabee3.jpg" alt="Fifth slide"></a>
+							<div class="container">
+								<div class="carousel-caption carousel-caption-projects">
+									<h3><a href="{{ site.url }}/usc-auv-passive-sonar">usc-auv-</a></h3>
+									<p>An autonomous underwater vehicle.</p>
+								</div>
+							</div>
+						</div>
+						<div class="item slide6">
+							<a href="{{ site.url }}/vr-sandbox"><img class="img-responsive" src="{{ site.url }}/vr-sandbox/images/user.jpg" alt="Sixth slide"></a>
+							<div class="container">
+								<div class="carousel-caption carousel-caption-projects">
+									<h3><a href="{{ site.url }}/vr-sandbox">vr-sandbox</a></h3>
+									<p>A sandbox for creating VR content for the Oculus Rift DK2.</p>
+								</div>
+							</div>
+						</div>						
+					</div>
+					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="projects col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+				<h1><a name="hardware">Hardware</a></h1>
+				<div class="row">
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/afternoon-cape"><img class="img-circle" src="{{ site.url }}/afternoon-cape/images/pmcape_board.jpg"></a>
+						<h3><a href="{{ site.url }}/afternoon-cape">afternoon-cape</a></h3>
+						<p>A low-cost power monitoring cape for the BeagleBone Black.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/pm-board-zoo"><img class="img-circle" src="{{ site.url }}/pm-board-zoo/images/dog_3d_brd.jpg"></a>
+						<h3><a href="{{ site.url }}/pm-board-zoo">pm-board-zoo</a></h3>
+						<p>A collection of animal-themed power measurement adapter boards for various Sitara microprocessor EVMs.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/pool-safety-device"><img class="img-circle" src="{{ site.url }}/pool-safety-device/images/wristband_display.jpg"></a>
+						<h3><a href="{{ site.url }}/pool-safety-device">pool-safety-device</a></h3>
+						<p>An electronic wristband to prevent children from drowning in swimming pools.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/rc-car-collision"><img class="img-circle" src="{{ site.url }}/rc-car-collision/images/profile_view.jpg"></a>
+						<h3><a href="{{ site.url }}/rc-car-collision">rc-car-collision</a></h3>
+						<p>A real-time computer system to prevent head-on traffic collisions (of RC cars).</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/rtdc"><img class="img-circle" src="{{ site.url }}/rtdc/images/rtdc-pcb-assembled.jpg"></a>
+						<h3><a href="{{ site.url }}/rtdc">rtdc</a></h3>
+						<p>A daughter card for monitoring the temperature of a remote thermal diode.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/thermal-printer"><img class="img-circle" src="{{ site.url }}/thermal-printer/images/print_head.jpg"></a>
+						<h3><a href="{{ site.url }}/thermal-printer">thermal-printer</a></h3>
+						<p>A thermal printer cape reference design controlled by the PRU-ICSS on the BeagleBone Black.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/usc-auv-batteries"><img class="img-circle" src="{{ site.url }}/usc-auv-batteries/images/battery_pack.jpg"></a>
+						<h3><a href="{{ site.url }}/usc-auv-batteries">usc-auv-batteries</a></h3>
+						<p>A lithium-polymer battery power distribution and charging system for an AUV with 6 underwater thrusters.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/usc-auv-kill-switch"><img class="img-circle" src="{{ site.url }}/usc-auv-kill-switch/images/kill_switch_v1.JPG"></a>
+						<h3><a href="{{ site.url }}/usc-auv-kill-switch">usc-auv-kill-switch</a></h3>
+						<p>A thruster enable, complete with capacitive touch sensor, magnetic reed switch, μC, LCD, LEDs.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/usc-auv-passive-sonar"><img class="img-circle" src="{{ site.url }}/usc-auv-passive-sonar/images/sonar_testing.jpg"></a>
+						<h3><a href="{{ site.url }}/usc-auv-passive-sonar">usc-auv-passive-sonar</a></h3>
+						<p>A hydrophone array used to triangulate the source of underwater acoustic pings.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/usc-rpl-avionics-power"><img class="img-circle" src="{{ site.url }}/usc-rpl-avionics-power/images/power_3d_profile.jpg"></a>
+						<h3><a href="{{ site.url }}/usc-rpl-avionics-power">usc-rpl-avionics-power</a></h3>
+						<p>A power distribution system for avionics equipment on a hybrid-powered rocket.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/usc-rpl-ignition"><img class="img-circle" src="{{ site.url }}/usc-rpl-ignition/images/liftoff4.jpg"></a>
+						<h3><a href="{{ site.url }}/usc-rpl-ignition">usc-rpl-ignition</a></h3>
+						<p>A robust, fault-tolerant ignition system for launching a hybrid-powered rocket to 100k ft. apogee.</p>
+					</div>
+					<!--div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/#"><img class="img-circle" src="{{ site.url }}/#/images/#.jpg"></a>
+						<h3><a href="{{ site.url }}/#">#</a></h3>
+						<p></p>
+					</div-->					
+				</div>
+				<br>
+				<br>
+				<h1><a name="software">Software</a></h1>
+				<div class="row">				
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/batch-merge-image-pairs"><img class="img-circle" src="{{ site.url }}/batch-merge-image-pairs/images/final_gif.gif"></a>
+						<h3><a href="{{ site.url }}/batch-merge-image-pairs">batch-merge-image-pairs</a></h3>
+						<p>A GIMP function used to create image frames for a side-by-side GIF animation.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/deixis"><img class="img-circle" src="{{ site.url }}/deixis/images/deixis_thumbnail.jpg"></a>
+						<h3><a href="{{ site.url }}/deixis">deixis</a></h3>
+						<p>An experiment to model the human perception of robotic deictic gestures (nonverbal communication).</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/kinect-duplo-sensing"><img class="img-circle" src="{{ site.url }}/kinect-duplo-sensing/images/demo_duplos.jpg"></a>
+						<h3><a href="{{ site.url }}/kinect-duplo-sensing">kinect-duplo-sensing</a></h3>
+						<p>A ROS package for identifying Duplo blocks with the Microsoft Kinect sensor.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/qm-fir-digital-filter-core"><img class="img-circle" src="{{ site.url }}/qm-fir-digital-filter-core/images/udp_demo_GUI.png"></a>
+						<h3><a href="{{ site.url }}/qm-fir-digital-filter-core">qm-fir-digital-filter-core</a></h3>
+						<p>A quadrature demodulation finite impulse response digital filter IP core in VHDL.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/robot-search-and-rescue"><img class="img-circle" src="{{ site.url }}/robot-search-and-rescue/images/robot_closed.jpg"></a>
+						<h3><a href="{{ site.url }}/robot-search-and-rescue">robot-search-and-rescue</a></h3>
+						<p>A sensor-rich robot designed to navigate a course and perform search-and-rescue tasks.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/tomasulo-processor"><img class="img-circle" src="{{ site.url }}/tomasulo-processor/images/architecture_snip.jpg"></a>
+						<h3><a href="{{ site.url }}/tomasulo-processor">tomasulo-processor</a></h3>
+						<p>A Tomasulo-based processor system implemented in VHDL on a Nexys3 FPGA.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/touch-tone-recognition"><img class="img-circle" src="{{ site.url }}/touch-tone-recognition/images/dtmf_gui.png"></a>
+						<h3><a href="{{ site.url }}/touch-tone-recognition">touch-tone-recognition</a></h3>
+						<p>A Matlab algorithm to decode computer- and user-generated DTMF touch tones.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/usc-smart-grid-app"><img class="img-circle" src="{{ site.url }}/usc-smart-grid-app/images/smartgrid_app_thumbnail.jpg"></a>
+						<h3><a href="{{ site.url }}/usc-smart-grid-app">usc-smart-grid-app</a></h3>
+						<p>A prototype cloud-based mobile application for interfacing with the smart grid infrastructure on the USC campus.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/vr-sandbox"><img class="img-circle" src="{{ site.url }}/vr-sandbox/images/user.jpg"></a>
+						<h3><a href="{{ site.url }}/#">vr-sandbox</a></h3>
+						<p>A virtual sandbox for creating VR content for the Oculus Rift DK2.</p>
+					</div>					
+					<!--div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/#"><img class="img-circle" src="{{ site.url }}/#/images/#.jpg"></a>
+						<h3><a href="{{ site.url }}/#">#</a></h3>
+						<p></p>
+					</div-->					
+				</div>
+				<br>
+				<br>
+				<h1><a name="misc">Misc.</a></h1>			
+				<div class="row">				
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/breakout-boards"><img class="img-circle" src="{{ site.url }}/breakout-boards/images/tmp441_breakout_oshpark.png"></a>
+						<h3><a href="{{ site.url }}/breakout-boards">breakout-boards</a></h3>
+						<p>A collection of various breakout boards for prototyping.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/bubbly-cloud"><img class="img-circle" src="{{ site.url }}/bubbly-cloud/images/bubbly.jpg"></a>
+						<h3><a href="{{ site.url }}/bubbly-cloud">bubbly-cloud</a></h3>
+						<p>A smart-er bubble making machine.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/catlady"><img class="img-circle" src="{{ site.url }}/catlady/images/emily_catlady.jpg"></a>
+						<h3><a href="{{ site.url }}/catlady">catlady</a></h3>
+						<p>A playful/joke website used to test a LAMP-based EC2 micro instance on AWS.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/reflow-toaster"><img class="img-circle" src="{{ site.url }}/reflow-toaster/images/msp430_temp_booster.jpg"></a>
+						<h3><a href="{{ site.url }}/reflow-toaster">reflow-toaster</a></h3>
+						<p>A cheap toaster oven repurposed to perform reflow soldering.</p>
+					</div>
+					<div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/skydive-tools"><img class="img-circle" src="{{ site.url }}/skydive-tools/images/cypres2.jpg"></a>
+						<h3><a href="{{ site.url }}/skydive-tools">skydive-tools</a></h3>
+						<p>Ideas to improve the ability, awareness, and safety of skydivers.</p>
+					</div>
+					<!--div class="col-sm-6 project_listing">
+						<a href="{{ site.url }}/#"><img class="img-circle" src="{{ site.url }}/#/images/#.jpg"></a>
+						<h3><a href="{{ site.url }}/#">#</a></h3>
+						<p></p>
+					</div-->						
+				</div>
+			</div>
+		</div>
+	</div>
