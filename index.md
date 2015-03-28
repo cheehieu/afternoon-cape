@@ -1,16 +1,16 @@
 ---
 layout: project
 title: afternoon-cape
-subtitle: A low-cost power monitoring (p.m. AKA "afternoon") cape for the BeagleBone Black.
+subtitle: A low-cost power monitoring cape for the BeagleBone Black.
 main_image: images/capes_display.jpg
 ---
 
-afternoon-cape
-==============
+<img src="images/capes_display.jpg">
 
 A Power Monitor (PM aka "Afternoon") cape for the BeagleBone Black. The AfternoonCape utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply.
 
 <img src="images/pmcape_board.jpg">
+
 <img src="images/pmcape_lcd.jpg">
 
 This repository contains:
@@ -34,6 +34,7 @@ Revision History:
 A1:
 
 <img src="images/pmcape_A1_oshpark_top.png" width="350">
+
 <img src="images/pmcape_A1_oshpark_bottom.png" width="350">
 
 - MUX_SEL0 (P8, pin 12) - GPIO1_12 (0x44e10830, 0x30 offset, #44)
@@ -48,6 +49,7 @@ A1:
 A2:
 
 <img src="images/pmcape_A2_oshpark_top.png" width="350">
+
 <img src="images/pmcape_A2_oshpark_bottom.png" width="350">
 
 - MUX_SEL0 (P8, pin 12)
@@ -62,6 +64,7 @@ A2:
 A3:
 
 <img src="images/pmcape_A3_oshpark_top.png" width="350">
+
 <img src="images/pmcape_A3_oshpark_bottom.png" width="350">
 
 - INA42-INA4F handles channels 0 through 11
@@ -71,4 +74,5 @@ A3:
 B1:
 
 <img src="images/pmcape_B1_oshpark_top.png" width="350">
+
 <img src="images/pmcape_B1_oshpark_bottom.png" width="350">
