@@ -92,3 +92,13 @@ Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a
 * Ensure script compatibily with latest v3.14 kernel
 * Cost comparison with other *more expensive* solutions (DARA, ACME, PMDC, Spectrum Digital)
 * Qt GUI over network connection to a host PC
+
+
+https://skfb.ly/BQyC
+<iframe width="640" height="480" src="https://sketchfab.com/models/9cae54c9355e4450bdcc2323d913253a/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+    <a href="https://sketchfab.com/models/9cae54c9355e4450bdcc2323d913253a?utm_source=oembed&utm_medium=embed&utm_campaign=9cae54c9355e4450bdcc2323d913253a" target="_blank" style="font-weight: bold; color: #1CAAD9;">Fork</a>
+    by <a href="https://sketchfab.com/hieu?utm_source=oembed&utm_medium=embed&utm_campaign=9cae54c9355e4450bdcc2323d913253a" target="_blank" style="font-weight: bold; color: #1CAAD9;">hieu</a>
+    on <a href="https://sketchfab.com?utm_source=oembed&utm_medium=embed&utm_campaign=9cae54c9355e4450bdcc2323d913253a" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
