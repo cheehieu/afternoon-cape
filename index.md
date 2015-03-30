@@ -2,7 +2,6 @@
 layout: project
 title: afternoon-cape
 subtitle: A low-cost power monitoring cape for the BeagleBone Black.
-main_image: images/capes_display.jpg
 ---
 
 <img src="images/capes_display.jpg">
