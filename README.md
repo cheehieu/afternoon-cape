@@ -3,26 +3,29 @@
 <img src="images/capes_display.jpg">
 
 ## Overview
-A Power Monitor (PM aka "Afternoon") cape for the BeagleBone Black. The AfternoonCape utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply.
+The AfternoonCape is a low-cost power monitoring (PM aka "Afternoon") cape for the BeagleBone Black. It utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply. This cape was created because of a need to quickly measure the active/leakage power of TI Sitara processors--without the use of a hefty digital multimeter. This solution is portable, relatively low-cost (~$20), and has an acceptable accuracy and sampling rate for my characterization purposes.
+
+This repository contains:
+- Altium libraries, schematics, and board files
+- PCB gerbers and drill files
+- Bill of materials
+- Standalone Bash scripts, Linux device drivers for CD74HC4067, INA226, TMP441
+- GUI source, log files
+
+## Hardware
+A few different board revisions were designed to test the accuracy of different signal path implementations. The "Alpha" revisions 
 
 <img src="images/pmcape_board.jpg">
 
 <img src="images/pmcape_lcd.jpg">
 
-This repository contains:
-- Altium library, schematic, and board files
-- PCB gerbers and drill files
-- Bill of materials
-- Linux device driver for CD74HC4067, INA226, TMP441
-- GUI source
+### Measuring Power
+Please see this Current Shunt Monitoring app note for a great explanation of measuring power with instrumentation amplifiers.
 
-## Hardware
-
-Revision History:
-- Alpha releases A1 (TI mux), A2 (ADI mux), A3 (discrete channel INAs)
-- Beta releases B1 (TI mux)
 
 ### Rev. A1:
+This revision utilizes a TI analog multiplexer
+Added complexity with GPIOs
 
 <img src="images/pmcape_A1_oshpark_top.png" width="350">
 
@@ -39,6 +42,8 @@ Revision History:
 
 
 ### Rev. A2:
+This revision utilizes an ADI analog multiplexer
+High cost
 
 <img src="images/pmcape_A2_oshpark_top.png" width="350">
 
@@ -54,6 +59,8 @@ Revision History:
 
 
 ### Rev. A3:
+This revision utilizes discrete INAs for each channel
+Very high cost
 
 <img src="images/pmcape_A3_oshpark_top.png" width="350">
 
@@ -64,6 +71,8 @@ Revision History:
 
 
 ### Rev. B1:
+After testing all three Alpha revisions, it was determined that the TI analog mux (Rev. A1) was sufficiently accurate
+
 
 <img src="images/pmcape_B1_oshpark_top.png" width="350">
 
@@ -75,6 +84,49 @@ Revision History:
 * 
 
 ## Software
+
+### Standalone Bash Script
+The standalone Bash script is the quick way to generate power numbers in a single instance. The script can be executed in a shell terminal on the BeagleBone Black running an Arago distribution. The following is a high-level procedure for taking power measurements with the AfternoonCape:
+1. Initialize INA226, GPIOs
+2. Take shunt and bus voltage measurements for all supplies
+3. Average the measurement values and store
+4. Calculate power
+5. Output to console and/or log file
+6. Cleanup
+
+```bash
+...
+#EVM Specific
+declare -a SUPPLIES=('VDD_CORE' 'VDD_MPU' 'VDDS_DDR' 'V1_8D' 'V3_3D' 'VDDS_DDR_M
+EM');
+declare -a RES=(0.05 0.05 0.05 0.1 0.1 0.05);
+...
+echo $mux_sel0 > /sys/class/gpio/gpio44/value
+echo $mux_sel1 > /sys/class/gpio/gpio49/value
+echo $mux_sel2 > /sys/class/gpio/gpio115/value
+echo $mux_sel3 > /sys/class/gpio/gpio60/value
+...
+#Collect shunt voltage measurement
+shuntv=$(i2cget -y 1 $MUX1_INA_ADDR $SHUNTV_REG w)
+let "temp = $shuntv >> 8"
+let "temp2 = $shuntv << 8 | $temp"
+let "shuntv = $temp2 & 0xffff"
+shuntv=$(echo "$shuntv*0.0025" | bc)
+MUX1_SHUNTV[j]=$shuntv
+...
+#Collect bus voltage measurement
+busv=$(i2cget -y 1 $MUX1_INA_ADDR $BUSV_REG w)
+let "temp = $busv >> 8"
+let "temp2 = $busv << 8 | $temp"
+let "busv = $temp2 & 0xffff"
+busv=$(echo "$busv*0.00125" | bc)
+MUX1_BUSV[k]=$busv
+...
+#Calculate power
+SUPPLIES_CURRENT[i]=$(echo "${SUPPLIES_SHUNTV[i]}/${RES[i]}" | bc -l)
+SUPPLIES_POWER[i]=$(echo "${SUPPLIES_CURRENT[i]}*${SUPPLIES_BUSV[i]}" |
+total_power=$(echo "$total_power+${SUPPLIES_POWER[$x]}" | bc)
+```
 
 Usage:
 - loadmod afternoon-cape.ko EVM=am437xGP.txt
@@ -90,8 +142,8 @@ Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a
 ## To Do:
 * Complete design for Rev. B, assemble & test
 * Ensure script compatibily with latest v3.14 kernel
-* Cost comparison with other *more expensive* solutions (DARA, ACME, PMDC, Spectrum Digital)
-* Qt GUI over network connection to a host PC
+* Cost comparison with other *more expensive* solutions (DARA, ACME, PMDC, Spectrum Digital, Tick)
+* Qt GUI and data logging over a network connection to a host PC
 
 
 https://skfb.ly/BQyC
