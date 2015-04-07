@@ -1,6 +1,6 @@
 # afternoon-cape
 
-<img src="http://niftyhedgehog.com/afternoon-cape/images/capes_display.jpg" width="500">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_lcd.jpg">
 
 ## Overview
 The AfternoonCape is a low-cost power monitoring (PM aka "afternoon") cape for the BeagleBone Black. It utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply. This cape was created because of a need to quickly measure the active/leakage power of TI Sitara processors, without the use of hefty digital multimeter lab equipment. The AfternoonCape is a portable, relatively low-cost (~$20) solution and meets the accuracy and sampling rate requirements for my characterization purposes.
@@ -15,12 +15,13 @@ This repository contains:
 ## Hardware
 The AfternoonCape relies on special techniques and assumptions used for measuring power using current shunt monitors. For more information on current shunt monitors, please review this great application note: [Current Shunt Monitors](http://www.ti.com/lit/ml/slyb194a/slyb194a.pdf). 
 
+<img src="http://niftyhedgehog.com/afternoon-cape/images/capes_display.jpg">
+
 A few different board revisions were designed to test the accuracy/reliability of different signal path implementations. These "Alpha" revisions were comprised of the following: 
 - Rev. A1: supports 32 channel inputs --> 4 discrete 16-to-1 analog muxes --> 2 instrumentation amplifiers sampling the voltage drop across a current shunt resistor
 - Rev. A2: supports 32 channel inputs --> 2 differential 16-to-1 analog muxes --> 2 instrumentation amplifiers sampling the voltage drop across a current shunt resistor
 - Rev. A3: supports 12 channel inputs --> 12 dedicated instrumentation amplifiers sampling the voltage drop across each current shunt resistor --> LCD output
 
-<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_lcd.jpg" width="500">
 
 ### Rev. A1:
 This revision supports 32 channel inputs, which means it can measure the power consumption from 32 separate power supplies. The TI Sitara processors have advanced power designs to enable key power management techniques. One such technique is having several voltage and power domains, which can be individually turned off during periods of low activity (to save power). This type of design leads to a single-core processor having upwards of thirty separate power supplies. Thus, in order to measure total device power with voltage domain granularity, it is imperative that the measurement tool supports a sufficient amount of channel inputs.
@@ -138,7 +139,7 @@ Usage:
 
 ### Accuracy
 The afternoon-cape is a good, low-cost solution for getting "ballpark" power measurements. It works best in medium power use cases, where the current shunt voltage is >1mV; voltages on the micro-volt level are less accurately interpreted through the analog mux.
-Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a $1000 Keithley Digital Multimeter with a $500 switching multiplexer module, the accuracy was comparable.
+Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a $1000+ Keithley Digital Multimeter with a $500 switching multiplexer module, the accuracy was comparable.
 * Table comparison
 
 ## To Do:
@@ -147,7 +148,7 @@ Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a
 * Cost comparison with other *more expensive* solutions (DARA, ACME, PMDC, Spectrum Digital, Tick)
 * Qt GUI and data logging over a network connection to a host PC
 
-
+## 3D CAD
 <iframe width="640" height="480" src="https://sketchfab.com/models/0be9d541e4cb438f95a222904efbc644/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
 
 <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
