@@ -1,6 +1,6 @@
 # afternoon-cape
 
-<img src="images/capes_display.jpg">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/capes_display.jpg">
 
 ## Overview
 The AfternoonCape is a low-cost power monitoring (PM aka "Afternoon") cape for the BeagleBone Black. It utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply. This cape was created because of a need to quickly measure the active/leakage power of TI Sitara processors--without the use of a hefty digital multimeter. This solution is portable, relatively low-cost (~$20), and has an acceptable accuracy and sampling rate for my characterization purposes.
@@ -15,9 +15,9 @@ This repository contains:
 ## Hardware
 A few different board revisions were designed to test the accuracy of different signal path implementations. The "Alpha" revisions 
 
-<img src="images/pmcape_board.jpg">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_board.jpg">
 
-<img src="images/pmcape_lcd.jpg">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_lcd.jpg">
 
 ### Measuring Power
 Please see this Current Shunt Monitoring app note for a great explanation of measuring power with instrumentation amplifiers.
@@ -27,9 +27,9 @@ Please see this Current Shunt Monitoring app note for a great explanation of mea
 This revision utilizes a TI analog multiplexer
 Added complexity with GPIOs
 
-<img src="images/pmcape_A1_oshpark_top.png" width="350">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_A1_oshpark_top.png" width="350">
 
-<img src="images/pmcape_A1_oshpark_bottom.png" width="350">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_A1_oshpark_bottom.png" width="350">
 
 - MUX_SEL0 (P8, pin 12) - GPIO1_12 (0x44e10830, 0x30 offset, #44)
 - MUX_SEL1 (P9, pin 23) - GPIO1_17 (0x44e10844, 0x44 offset, #49)
@@ -45,9 +45,9 @@ Added complexity with GPIOs
 This revision utilizes an ADI analog multiplexer
 High cost
 
-<img src="images/pmcape_A2_oshpark_top.png" width="350">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_A2_oshpark_top.png" width="350">
 
-<img src="images/pmcape_A2_oshpark_bottom.png" width="350">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_A2_oshpark_bottom.png" width="350">
 
 - MUX_SEL0 (P8, pin 12)
 - MUX_SEL1 (P9, pin 23)
@@ -62,9 +62,9 @@ High cost
 This revision utilizes discrete INAs for each channel
 Very high cost
 
-<img src="images/pmcape_A3_oshpark_top.png" width="350">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_A3_oshpark_top.png" width="350">
 
-<img src="images/pmcape_A3_oshpark_bottom.png" width="350">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_A3_oshpark_bottom.png" width="350">
 
 - INA42-INA4F handles channels 0 through 11
 - Accuracy +/- %
@@ -74,9 +74,9 @@ Very high cost
 After testing all three Alpha revisions, it was determined that the TI analog mux (Rev. A1) was sufficiently accurate
 
 
-<img src="images/pmcape_B1_oshpark_top.png" width="350">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_B1_oshpark_top.png" width="350">
 
-<img src="images/pmcape_B1_oshpark_bottom.png" width="350">
+<img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_B1_oshpark_bottom.png" width="350">
 
 * Smaller vias
 * Decoupling caps
