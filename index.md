@@ -24,9 +24,9 @@ The AfternoonCape relies on special techniques and assumptions used for measurin
 
 A few different board revisions were designed to test the accuracy/reliability of different signal path implementations. These "Alpha" revisions were comprised of the following: 
 
-* Rev. A1: supports 32 channel inputs --> 4 discrete 16-to-1 analog muxes --> 2 instrumentation amplifiers sampling the voltage drop across a current shunt resistor
-* Rev. A2: supports 32 channel inputs --> 2 differential 16-to-1 analog muxes --> 2 instrumentation amplifiers sampling the voltage drop across a current shunt resistor
-* Rev. A3: supports 12 channel inputs --> 12 dedicated instrumentation amplifiers sampling the voltage drop across each current shunt resistor --> LCD output
+* *Rev. A1*: supports 32 channel inputs --> 4 discrete 16-to-1 analog muxes --> 2 instrumentation amplifiers sampling the voltage drop across a current shunt resistor
+* *Rev. A2*: supports 32 channel inputs --> 2 differential 16-to-1 analog muxes --> 2 instrumentation amplifiers sampling the voltage drop across a current shunt resistor
+* *Rev. A3*: supports 12 channel inputs --> 12 dedicated instrumentation amplifiers sampling the voltage drop across each current shunt resistor --> LCD output
 
 
 ### Rev. A1:
@@ -141,7 +141,7 @@ SUPPLIES_POWER[i]=$(echo "${SUPPLIES_CURRENT[i]}*${SUPPLIES_BUSV[i]}" |
 total_power=$(echo "$total_power+${SUPPLIES_POWER[$x]}" | bc)
 ```
 
-Usage:
+#### Usage:
 `root@beaglebone:~# ./testA2.sh`
 
 * loadmod afternoon-cape.ko EVM=am437xGP.txt
