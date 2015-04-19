@@ -3,14 +3,14 @@
 <img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_lcd.jpg">
 
 ## Overview
-The AfternoonCape is a low-cost power monitoring (PM aka "afternoon") cape for the BeagleBone Black. It utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply. This cape was created because of a need to quickly measure the active/leakage power of TI Sitara processors, without the use of hefty digital multimeter lab equipment. The AfternoonCape is a portable, relatively low-cost (~$20) solution and meets the accuracy and sampling rate requirements for my characterization purposes.
+The AfternoonCape is a low-cost power monitoring (PM aka "afternoon") cape for the BeagleBone Black. It utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply. This cape was created because of a need to quickly measure the active/leakage power of TI Sitara processors, without the use of hefty digital multimeter lab equipment. The AfternoonCape is a portable, relatively low-cost (~$20) solution and meets the accuracy and sampling rate requirements for my power characterization purposes.
 
 This repository contains:
 
 * Altium libraries, schematics, and board files
 * PCB gerbers and drill files
 * Bill of materials
-* Standalone Bash scripts, Linux device drivers for INA226, CD74HC4067, TMP441
+* Standalone Bash scripts, Linux device drivers for INA226, TMP441
 * GUI source, logging infrastructure
 
 ## Hardware
@@ -109,12 +109,16 @@ The standalone Bash script is the quick way to generate power numbers in a singl
 declare -a SUPPLIES=('VDD_CORE' 'VDD_MPU' 'VDDS_DDR' 'V1_8D' 'V3_3D' 'VDDS_DDR_M
 EM');
 declare -a RES=(0.05 0.05 0.05 0.1 0.1 0.05);
+
 ...
+
 echo $mux_sel0 > /sys/class/gpio/gpio44/value
 echo $mux_sel1 > /sys/class/gpio/gpio49/value
 echo $mux_sel2 > /sys/class/gpio/gpio115/value
 echo $mux_sel3 > /sys/class/gpio/gpio60/value
+
 ...
+
 #Collect shunt voltage measurement
 shuntv=$(i2cget -y 1 $MUX1_INA_ADDR $SHUNTV_REG w)
 let "temp = $shuntv >> 8"
@@ -122,7 +126,9 @@ let "temp2 = $shuntv << 8 | $temp"
 let "shuntv = $temp2 & 0xffff"
 shuntv=$(echo "$shuntv*0.0025" | bc)
 MUX1_SHUNTV[j]=$shuntv
+
 ...
+
 #Collect bus voltage measurement
 busv=$(i2cget -y 1 $MUX1_INA_ADDR $BUSV_REG w)
 let "temp = $busv >> 8"
@@ -130,7 +136,9 @@ let "temp2 = $busv << 8 | $temp"
 let "busv = $temp2 & 0xffff"
 busv=$(echo "$busv*0.00125" | bc)
 MUX1_BUSV[k]=$busv
+
 ...
+
 #Calculate power
 SUPPLIES_CURRENT[i]=$(echo "${SUPPLIES_SHUNTV[i]}/${RES[i]}" | bc -l)
 SUPPLIES_POWER[i]=$(echo "${SUPPLIES_CURRENT[i]}*${SUPPLIES_BUSV[i]}" |
@@ -138,7 +146,9 @@ total_power=$(echo "$total_power+${SUPPLIES_POWER[$x]}" | bc)
 ```
 
 #### Usage:
-`root@beaglebone:~# ./testA2.sh`
+```bash
+root@beaglebone:~# ./testA2.sh
+```
 
 * loadmod afternoon-cape.ko EVM=am437xGP.txt
 * Bash shell scripts using sysfs GPIO
@@ -160,7 +170,7 @@ Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a
 
 ## To Do:
 * Complete design for Rev. B, assemble & test
-* Ensure script compatibily with latest v3.14 kernel
+* Ensure script compatibility with latest v3.14 kernel
 * Cost comparison with other *more expensive* solutions (DARA, ACME, PMDC, Spectrum Digital, Tick)
 * Qt GUI and data logging over a network connection to a host PC
-* 
+* Update README with Accuracy and BOM materials
