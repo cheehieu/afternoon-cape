@@ -44,6 +44,8 @@ baseurl: ""
 markdown: redcarpet
 highlighter: pygments
 permalink: /:year/:month/:day/:title
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
 
 # Use the following plug-ins
 gems:
@@ -56,4 +58,3 @@ exclude:
     - LICENSE
     - README.md
     - CNAME
-    - quotes.txt
