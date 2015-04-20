@@ -160,6 +160,7 @@ Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a
 * Table comparison
 
 ## 3D CAD
+### AfternoonCape
 <iframe width="640" height="480" src="https://sketchfab.com/models/0be9d541e4cb438f95a222904efbc644/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
 
 <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
@@ -167,6 +168,16 @@ Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a
     by <a href="https://sketchfab.com/hieu?utm_source=oembed&utm_medium=embed&utm_campaign=0be9d541e4cb438f95a222904efbc644" target="_blank" style="font-weight: bold; color: #1CAAD9;">hieu</a>
     on <a href="https://sketchfab.com?utm_source=oembed&utm_medium=embed&utm_campaign=0be9d541e4cb438f95a222904efbc644" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
 </p>
+
+### AfternoonCape Mounted on a BBB
+<iframe width="640" height="480" src="https://sketchfab.com/models/db15b2ddc1894994b0886cfb680e3865/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+    <a href="https://sketchfab.com/models/db15b2ddc1894994b0886cfb680e3865?utm_source=oembed&utm_medium=embed&utm_campaign=db15b2ddc1894994b0886cfb680e3865" target="_blank" style="font-weight: bold; color: #1CAAD9;">AfternoonCape with BBB</a>
+    by <a href="https://sketchfab.com/hieu?utm_source=oembed&utm_medium=embed&utm_campaign=db15b2ddc1894994b0886cfb680e3865" target="_blank" style="font-weight: bold; color: #1CAAD9;">hieu</a>
+    on <a href="https://sketchfab.com?utm_source=oembed&utm_medium=embed&utm_campaign=db15b2ddc1894994b0886cfb680e3865" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
+
 
 ## To Do:
 * Complete design for Rev. B, assemble & test
