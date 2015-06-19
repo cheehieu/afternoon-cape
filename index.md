@@ -7,9 +7,9 @@ subtitle: A low-cost power monitoring cape for the BeagleBone Black.
 <img src="http://niftyhedgehog.com/afternoon-cape/images/pmcape_lcd.jpg">
 
 ## Overview
-The AfternoonCape is a low-cost power monitoring (PM aka "afternoon") cape for the BeagleBone Black. It utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply. This cape was created because of a need to quickly measure the active/leakage power of TI Sitara processors, without the use of hefty digital multimeter lab equipment. The AfternoonCape is a portable, relatively low-cost (~$20) solution and meets the accuracy and sampling rate requirements for my power characterization purposes.
+The AfternoonCape is a low-cost power monitoring (PM aka "afternoon") cape for the BeagleBone Black. It utilizes the INA226 instrumentation amplifier to accurately sample and monitor voltage, current, and power consumption of a given supply. This cape was created because of a need to quickly measure the active/leakage power of TI Sitara processors, without the use of hefty digital multimeter lab equipment. The AfternoonCape is a portable, relatively low-cost (~$20) solution and met the accuracy and sampling rate requirements of my team's power characterization and development tasks.
 
-This repository contains:
+This project repository contains:
 
 * Altium libraries, schematics, and board files
 * PCB gerbers and drill files
@@ -17,8 +17,9 @@ This repository contains:
 * Standalone Bash scripts, Linux device drivers for INA226, TMP441
 * GUI source, logging infrastructure
 
+
 ## Hardware
-The AfternoonCape relies on special techniques and assumptions used for measuring power using current shunt monitors. For more information on current shunt monitors, please review this great application note: [Current Shunt Monitors](http://www.ti.com/lit/ml/slyb194a/slyb194a.pdf). 
+The AfternoonCape relies on special techniques and assumptions used for measuring power using current shunt monitors. For more information on current shunt monitors, please review this application note: [Current Shunt Monitors](http://www.ti.com/lit/ml/slyb194a/slyb194a.pdf). 
 
 <img src="http://niftyhedgehog.com/afternoon-cape/images/capes_display.jpg">
 
@@ -27,7 +28,6 @@ A few different board revisions were designed to test the accuracy/reliability o
 * *Rev. A1*: supports 32 channel inputs --> 4 discrete 16-to-1 analog muxes --> 2 instrumentation amplifiers sampling the voltage drop across a current shunt
 * *Rev. A2*: supports 32 channel inputs --> 2 differential 16-to-1 analog muxes --> 2 instrumentation amplifiers sampling the voltage drop across a current shunt
 * *Rev. A3*: supports 12 channel inputs --> 12 dedicated instrumentation amplifiers sampling the voltage drop across each current shunt --> LCD output
-
 
 ### Rev. A1:
 This revision supports 32 channel inputs, which means it can measure the power consumption from 32 separate power supplies. The TI Sitara processors have advanced power designs to enable key power management techniques. One such technique is having several voltage and power domains, which can be individually turned off during periods of low activity (to save power). This type of design leads to a single-core processor having upwards of thirty separate power supplies. Thus, in order to measure total device power with voltage domain granularity, it is imperative that the measurement tool supports a sufficient amount of channel inputs.
@@ -75,7 +75,6 @@ Details:
 * INA42-INA4F handles channels 0 through 11
 * Accuracy +/- %
 
-
 ### Rev. B1:
 After testing all three Alpha revisions, it was determined that the TI analog mux (Rev. A1) was sufficiently accurate for active power characterization purposes. The Beta revision is a board shrink that incorporates lessons learned.
 
@@ -87,18 +86,18 @@ Details:
 
 * Smaller vias
 * Decoupling caps
-* 16-channel
-* LCD connector
+* 16-channels
+* LCD connector reposition
 * FTDI connector for serial communication with a host PC
 * AUX INA226 for dedicated system input power measurement
-* PMDC connector brings out signals for daisy chaining with PMDC daughter cards
+* PMDC connector for daisy chaining with PMDC daughter cards
 * TMP441 for thermal diode junction temperature monitoring
 
 
 ## Software
 
 ### Standalone Bash Script
-The standalone Bash script is the quick way to generate power numbers in a single instance. The script can be executed in a shell terminal on the BeagleBone Black running an Arago distribution. The following is a high-level procedure for taking power measurements with the AfternoonCape:
+The standalone Bash script is a quick way to generate power numbers in a single instance. The script can be executed in a shell terminal on the BeagleBone Black running a [Debian](http://beagleboard.org/project/debian/) Linux distribution (has support for '[bc](http://www.gnu.org/software/bc/manual/html_mono/bc.html)' by default). The following is a high-level procedure for taking power measurements with the AfternoonCape:
 
 1. Initialize INA226, GPIOs
 2. Take shunt and bus voltage measurements for all supplies
@@ -161,9 +160,10 @@ root@beaglebone:~# ./testA2.sh
 ### Accuracy
 The afternoon-cape is a good, low-cost solution for getting "ballpark" power measurements. It works best in medium power use cases, where the current shunt voltage is >1mV; voltages on the micro-volt level are less accurately interpreted through the analog mux.
 Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a $1000+ Keithley Digital Multimeter with a $500 switching multiplexer module, the accuracy was comparable.
+
 * Table comparison
 
-## 3D CAD
+## 3D
 ### AfternoonCape
 <iframe width="640" height="480" src="https://sketchfab.com/models/0be9d541e4cb438f95a222904efbc644/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
 
@@ -184,8 +184,8 @@ Some tests were done on the AM335x GP EVM to determine accuracy. Compared with a
 
 
 ## To Do:
+* Update README with Accuracy and BOM materials
 * Complete design for Rev. B, assemble & test
 * Ensure script compatibility with latest v3.14 kernel
-* Cost comparison with other *more expensive* solutions (DARA, ACME, PMDC, Spectrum Digital, Tick)
 * Qt GUI and data logging over a network connection to a host PC
-* Update README with Accuracy and BOM materials
+* Cost comparison with other *more expensive* solutions (DARA, ACME, PMDC, Spectrum Digital, Tick)
