@@ -41,11 +41,11 @@ baseurl: ""
 #
 # !! You don't need to change any of the configuration flags below !!
 #
-markdown: redcarpet
-highlighter: pygments
+# markdown: redcarpet
+highlighter: rouge
 permalink: /:year/:month/:day/:title
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
+# redcarpet:
+#   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
 
 # Use the following plug-ins
 gems:
